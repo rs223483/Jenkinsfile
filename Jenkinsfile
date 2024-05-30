@@ -1,4 +1,4 @@
-pipeline{
+    pipeline{
     agent any
     stages{
         stage("echo a line"){
@@ -11,9 +11,11 @@ pipeline{
                 sh 'pwd'
             }
         }
-        stage("A"){
+        stage("Runnig multiple commands"){
             steps{
-                echo "========executing A========"
+                sh '''pwd
+                    ls
+                    whoami'''
             }
         }
     }
